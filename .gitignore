@@ -1,6 +1,6 @@
 # External binary components
 bin/*
-# !bin/.gitkeep
+!bin/.gitkeep
 # Ready builds
 /nvMathViewer.nvda-addon
 /nvMathViewer.zip
