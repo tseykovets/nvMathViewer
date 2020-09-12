@@ -1,0 +1,42 @@
+﻿:script ViewLaTeXAsInteractiveMathML
+:Synopsis View the selected LaTeX notation as interactive MathML in your browser.
+:Description Press this keystroke to view the selected LaTeX notation as interactive MathML in your browser. If there is no selection the text will be taken from the clipboard.
+:Category Misc
+
+:script ViewAsciiMathAsInteractiveMathML
+:Synopsis View the selected AsciiMath notation as interactive MathML in your browser.
+:Description Press this keystroke to view the selected AsciiMath notation as interactive MathML in your browser. If there is no selection the text will be taken from the clipboard.
+:Category Misc
+
+:script ViewLaTeXAsSourceMathML
+:Synopsis View the selected LaTeX notation as the MathML source in the Virtual Viewer.
+:Description Press this keystroke to view the selected LaTeX notation as the MathML source in the Virtual Viewer. If there is no selection the text will be taken from the clipboard.
+:Category Misc
+
+:script ViewAsciiMathAsSourceMathML
+:Synopsis View the selected AsciiMath notation as the MathML source in the Virtual Viewer.
+:Description Press this keystroke to view the selected AsciiMath notation as the MathML source in the Virtual Viewer. If there is no selection the text will be taken from the clipboard.
+:Category Misc
+
+:function ShowMathML
+:Synopsis Show the result of converting the math notation to MathML.
+:Description The function shows the result of converting selected text or text from the clipboard to MathML in browser.
+:Category Misc
+:Param string/sFormat Format of math notation
+:Optional
+:Param int/iSource Show result as MathML source
+
+:function GetText
+:Returns string Selected text or text from the clipboard, if not then return false.
+:Synopsis Return selected text or text from the clipboard, if not then return false.
+:Description The function returns the selected text. If there is no selected text then the function returns the text from the clipboard. If there is no text in the clipboard then the function returns false.
+:Category Misc
+
+:function CreateFileInUtf8
+:Synopsis Create file in UTF-8 encoding.
+:Description The function creates a text file in UTF-8 encoding with or without BOM.
+:Category Misc
+:Param string/sFile Path to file
+:Param string/sText Content of file
+:Param int/iBOM true if with BOM, false if without BOM
+

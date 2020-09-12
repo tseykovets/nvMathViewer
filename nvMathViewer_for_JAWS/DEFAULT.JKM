@@ -1,0 +1,9 @@
+[Common Keys]
+Insert+Space&N&L=ViewLaTeXAsInteractiveMathML
+JAWSKey+Space&N&L=ViewLaTeXAsInteractiveMathML
+Insert+Space&N&A=ViewAsciiMathAsInteractiveMathML
+JAWSKey+Space&N&A=ViewAsciiMathAsInteractiveMathML
+Insert+Space&N&Shift+L=ViewLaTeXAsSourceMathML
+JAWSKey+Space&N&Shift+L=ViewLaTeXAsSourceMathML
+Insert+Space&N&Shift+A=ViewAsciiMathAsSourceMathML
+JAWSKey+Space&N&Shift+A=ViewAsciiMathAsSourceMathML

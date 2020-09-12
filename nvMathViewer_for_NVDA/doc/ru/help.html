@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<title>nvMathViewer</title>
+<link rel="stylesheet" type="text/css" media="screen" href="../style.css">
+</head>
+<body>
+<h1>nvMathViewer 1.0</h1>
+<p class="copyright">Copyright © Никита Цейковец <a href="mailto:tseikovets@rambler.ru?subject=nvMathViewer:%20">&lt;tseikovets@rambler.ru&gt;</a></p>
+<p>(Возможно более новая версия справки <a href="../en/help.html">доступна на английском</a>.)</p>
+<h2>О дополнении</h2>
+<p>nvMathViewer - это дополнение для NVDA, с помощью которого можно просматривать математический контент в нотациях LaTeX и AsciiMath как MathML.</p>
+<p>Эти нотации широко используются для записи математических символов и формул в компьютерных системах. Однако понимание LaTeX и AsciiMath требует специальных знаний и навыков, которых может не быть у обычного пользователя, такого как простой школьник или студент гуманитарной специальности. Кроме того, чтение этих нотаций напрямую может быть недостаточно удобным, потому что не предоставляет дополнительных возможностей для анализа структуры формул.</p>
+<p>nvMathViewer решает эти проблемы и даёт возможность незрячим пользователям быстро просмотреть любую нотацию LaTeX или AsciiMath, используя  специальные функции NVDA для невизуального чтения математического контента и структурной навигации по нему.</p>
+<h2>Первоначальная настройка</h2>
+<p>Это дополнение добавляет в NVDA несколько дополнительных жестов. По умолчанию они не назначены, поэтому вам нужно будет настроить их в диалоговом окне «Жесты ввода» в категории «Просмотр математического контента». Для получения дополнительной информации о настройке жестов прочтите Руководство пользователя NVDA → Жесты ввода.</p>
+<h2>Использование</h2>
+<ol>
+<li>Выделите текст нотации LaTeX или AsciiMath и выполните один из назначенных жестов (см. раздел «Первоначальная настройка»).</li>
+<li>Откроется окно сообщения в режиме обзора, в котором вы сможете просмотреть результат преобразования.</li>
+<li>Если выделенного текста нет, то дополнение попытается взять текст из буфера обмена.</li>
+</ol>
+<p>Для получения дополнительной информации об интерактивной навигации по математическому контенту прочтите Руководство пользователя NVDA → Чтение математических выражений.</p>
+<h2>Примеры</h2>
+<p>Если выделить следующую LaTeX нотацию и выполнить команду «Просмотреть выделенную LaTeX нотацию как интерактивный MathML в режиме обзора»</p>
+<blockquote>
+<p>x_{1, 2} = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}</p>
+</blockquote>
+<p>или выделить следующую нотацию AsciiMath и выполнить команду «Просмотреть выделенную AsciiMath нотацию как интерактивный MathML в режиме обзора»</p>
+<blockquote>
+<p>x_(1, 2) = (-b +- sqrt(b^2 -4ac))/(2a)</p>
+</blockquote>
+<p>Тогда это можно будет просмотреть в следующем виде:</p>
+<blockquote>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>x</mi>
+    <mrow>
+      <mn>1</mn>
+      <mo>,</mo>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>&#x2212;</mo>
+      <mi>b</mi>
+      <mo>&#xB1;</mo>
+      <msqrt>
+        <msup>
+          <mi>b</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mi>a</mi>
+        <mi>c</mi>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mi>a</mi>
+    </mrow>
+  </mfrac>
+</math>
+</blockquote>
+<h2>Лицензии</h2>
+<p>nvMathViewer — это свободное и открытое программное обеспечение.</p>
+<ul>
+<li>Ядро nvMathViewer лицензировано под <a href="../../gpl-3.0.txt" target="_blank">GNU General Public License 3</a>.</li>
+<li>nvMathViewer включает в себя среду выполнения Node.js, лицензированную под <a href="../../globalPlugins/nvMathViewer/Node.js/LICENSE" target="_blank">набором свободных лицензий</a>.</li>
+<li>nvMathViewer включает в себя движок MathJax, лицензированный под <a href="../../globalPlugins/nvMathViewer/Node.js/node_modules/mathjax-full/LICENSE" target="_blank">Apache License 2.0</a>.</li>
+<li>nvMathViewer включает в себя дополнительные скрипты для MathJax, лицензированные под Apache License 2.0.</li>
+</ul>
+<h2>Ссылки</h2>
+<ul>
+<li><a href="https://github.com/tseykovets/nvMathViewer" target="_blank">Репозиторий с исходным кодом и ссылками на готовые сборки nvMathViewer</a></li>
+<li><a href="https://addons.nvda-project.org/addons/access8math" target="_blank">Дополнение Access8Math, расширяющее возможности чтения математического контента при помощи NVDA</a></li>
+</ul>
+<hr>
+<p class="copyright">Этот документ доступен  по <a href="https://creativecommons.org/licenses/by/4.0/deed.ru" target="_blank">лицензии Creative Commons «Attribution» («Атрибуция») 4.0 Всемирная</a>.</p>
+</body>
+</html>

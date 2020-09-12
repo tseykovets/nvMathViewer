@@ -1,0 +1,11 @@
+# External binary components
+bin/*
+# !bin/.gitkeep
+# Ready builds
+/nvMathViewer.nvda-addon
+/nvMathViewer.zip
+# Build artifacts
+nvMathViewer_for_JAWS/nvMathViewer/
+nvMathViewer_for_NVDA/globalPlugins/nvMathViewer/Node.js/
+/nvMathViewer_for_NVDA/globalPlugins/nvMathViewer/am2mml.js
+/nvMathViewer_for_NVDA/globalPlugins/nvMathViewer/tex2mml.js

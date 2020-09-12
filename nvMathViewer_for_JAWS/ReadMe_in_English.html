@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>nvMathViewer</title>
+<style>
+BODY {
+	background: #FFFFFF;
+	color: #000000;
+	font-family: Verdana, "Times New Roman", Arial;
+	font-size: 12pt;
+	line-height: 1.5;
+}
+H1, H2, H3, .copyright {
+	text-align: center;
+	font-weight: bold;
+}
+H1 {
+	font-size: 18pt;
+}
+H2 {
+	font-size: 16pt;
+}
+H3, .copyright {
+	font-size: 14pt;
+}
+P {
+	text-align: justify;
+	padding: 6pt 5%;
+	text-indent: 0.5in;
+}
+TABLE {
+	border-collapse: collapse;
+}
+TD, TH {
+	padding: 3px;
+	border: 1px solid #000000;
+}
+TH {
+	font-weight: bold;
+	text-align: center;
+}
+</style>
+</head>
+<body>
+<h1>nvMathViewer 1.0</h1>
+<p class="copyright">Copyright © Nikita Tseykovets <a href="mailto:tseikovets@rambler.ru?subject=nvMathViewer:%20">&lt;tseikovets@rambler.ru&gt;</a></p>
+<!-- Translators: Remove the HTML comment symbols when translating this document into another language.
+<p>(A possibly newer version is <a href="ReadMe_in_English.html">available in English</a>.)</p>
+-->
+<h2>About</h2>
+<p>nvMathViewer is an extension for JAWS that can be used to view mathematical content in LaTeX and AsciiMath notations as MathML.</p>
+<p>These notations are widely used to write mathematical symbols and formulas in computer systems. However, understanding LaTeX and AsciiMath requires special knowledge and skills that the average user may not have, such as a simple schoolboy or a humanitarian student. In addition, reading these notations directly may not be convenient enough, because it does not provide additional opportunities for analyzing the structure of formulas.</p>
+<p>nvMathViewer solves these problems and enables blind users to quickly view any LaTeX or AsciiMath notations using special functions of JAWS for non-visual reading mathematical content and structural navigation through it.</p>
+<p>Note: The earliest version of JAWS that has support for reading mathematical content is 16.0 released in 2014.</p>
+<h2>Installation</h2>
+<p>First, unpack the extension archive. nvMathViewer can be installed manually or automatically.</p>
+<p>To install the extension manually follow these steps:</p>
+<ol>
+<li>Open the JAWS user settings directory. To do this:
+<ol type="A">
+<li>Open the Windows Start menu.</li>
+<li>Move to the “All Programs” submenu and open it.</li>
+<li>Move to the group of used version JAWS and open it.</li>
+<li>Move to the “Explore JAWS” group and open it.</li>
+<li>Move to “Explore My Settings” item and press Enter.</li>
+</ol>
+Windows Explorer opens with a list of files and folders (for the current user) containing user settings of JAWS.</li>
+<li>Copy the contents of the “enu” directory from the extension archive to the JAWS user settings directory. It contains three files with the same name “nvMathViewer” and different extensions. It is an English version, but there are versions in other languages in the extension archive. You can install them instead of English. If you have a multilingual version of JAWS, you can install several versions of the extension for different languages at the same time.</li>
+<li>Move to the nvMathViewer.jss file in the JAWS user settings directory and press Enter. The file should open in the Script Manager.</li>
+<li>In the Script Manager window, open the menu by pressing Alt and activate “File” → “Save” (or just press Control+S). In response, you should receive the message “Compile Complete”.</li>
+<li>In the Script Manager window, open the menu by pressing Alt and activate “File” → “Open User File”. In the standart file open dialog, select and open the myExtensions.jss file in the default directory. If there is no myExtensions.jss in this directory then you need to close this dialog by pressing Escape and find this file in the shared files directory. To do this, In the Script Manager menu, activate “File” → “Open Shared File” and then select and open the myExtensions.jss file.</li>
+<li>Move to the end of the myExtensions.jss file (Control+End) and paste or type the following string:<br>
+use "nvMathViewer.jsb"</li>
+<li>In the Script Manager window, open the menu by pressing Alt and activate “File” → “Save” (or just press Control+S). In response, you should receive the message “Compile Complete”. After that, the Script Manager can be closed (Alt+F4).</li>
+<li>Move one level up relative to the JAWS user settings directory. To do this, in the JAWS user settings directory, press BackSpace. You will find yourself in the language independent JAWS user settings directory. Copy the “nvMathViewer”  directory from the extension archive to the language independent JAWS user settings directory.</li>
+</ol>
+<p>To install the extension automatically use the install.vbs script from the archive. It supports three command line arguments:<p>
+<ul>
+<li>The first is the version of JAWS, for example, “16.0” or “2020”. Required.</li>
+<li>The second is the code of JAWS language, for example, “enu” for English or “rus” for Russian. Required.</li>
+<li>The third is the language version of nvMathViewer, that is, the name of the corresponding folder from the archive. Optional.</li>
+</ul>
+<p>For example, to install the English version of the extension for English JAWS 2020  run in the command line:<br>
+&gt;cscript install.vbs //nologo 2020 enu<br>
+or to install the Russian version of the extension for English JAWS 2020  run:<br>
+&gt;cscript install.vbs //nologo 2020 enu rus</p>
+<p>You can also just run this script and enter all arguments with dialogs.</p>
+<p>The script will take some time to complete all operations. Wait for the message about the end of the installation process.</p>
+<h2>Initial setup</h2>
+<p>This extension adds several extra scripts to JAWS. By default they are unassigned, so you will have to add keystrokes or gestures for them yourself. The extension contains the following scripts:</p>
+<table>
+<tr>
+<th>Script Name</th>
+<th>Synopsis</th>
+</tr>
+<tr>
+<td>ViewLaTeXAsInteractiveMathML</td>
+<td>View the selected LaTeX notation as interactive MathML in your browser.</td>
+</tr>
+<tr>
+<td>ViewAsciiMathAsInteractiveMathML</td>
+<td>View the selected AsciiMath notation as interactive MathML in your browser.</td>
+</tr>
+<tr>
+<td>ViewLaTeXAsSourceMathML</td>
+<td>View the selected LaTeX notation as the MathML source in the Virtual Viewer.</td>
+</tr>
+<tr>
+<td>ViewAsciiMathAsSourceMathML</td>
+<td>View the selected AsciiMath notation as the MathML source in the Virtual Viewer.</td>
+</tr>
+</table>
+<p>To add keystrokes for these scripts follow these steps:</p>
+<ol>
+<li>Open the JAWS user settings directory (see “Installation” section).</li>
+<li>Move to the DEFAULT.JKM file in the JAWS user settings directory and open it with a text editor, for example Notepad. To do this, use “Open With” submenu in context menu  of this file. You can also launch Notepad and open the DEFAULT.JKM file with the standart open file dialog (Control+O).</li>
+<li>In the DEFAULT.JKM file, find the “[Common Keys]” line and insert the lines for adding keystrokes after it like this:
+<blockquote><pre>
+[Common Keys]
+%KEYSTROKE%=%SCRIPT%
+</pre></blockquote>
+where
+<ul>
+<li>%KEYSTROKE% is the keystroke for one of the scripts;</li>
+<li>%SCRIPT% is the name of this script.</li>
+</ul>
+For example:
+<blockquote><pre>
+Insert+Alt+A=ViewAsciiMathAsInteractiveMathML
+</pre></blockquote></li>
+<li>Close the DEFAULT.JKM file and save the changes.</li>
+</ol>
+<p>If the DEFAULT.JKM file is not in the JAWS user settings directory then just copy the ready DEFAULT.JKM file from the extension archive there.</p>
+<p>After that, you will be able to manage keystrokes or gestures of these scripts in key map file with the Keyboard Manager of JAWS (“default” key map file). For more information about using the Keyboard Manager, read the JAWS Help → Customizing JAWS for Windows → Keyboard Manager.</p>
+<h2>Using</h2>
+<ol>
+<li>Select the text of LaTeX or AsciiMath notation and perform one of the assigned keystrokes or gestures (see “Initial setup” section).</li>
+<li>The window of your browser or Virtual Viewer will open, where you can view the conversion result.</li>
+<li>If there is no the selected text then the extension will try to take a text from the clipboard.</li>
+</ol>
+<p>For more information about interactive navigation through mathematical content, read the JAWS Help → Using the Internet with JAWS → Navigating Web Pages → MathML.</p>
+<h2>Examples</h2>
+<p>If you select the following LaTeX notation and perform the ViewLaTeXAsInteractiveMathML script</p>
+<blockquote>
+<p>x_{1, 2} = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}</p>
+</blockquote>
+<p>or you select the following AsciiMath notation and perform the ViewAsciiMathAsInteractiveMathML script</p>
+<blockquote>
+<p>x_(1, 2) = (-b +- sqrt(b^2 -4ac))/(2a)</p>
+</blockquote>
+<p>then it can be viewed in the following form:</p>
+<blockquote>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>x</mi>
+    <mrow>
+      <mn>1</mn>
+      <mo>,</mo>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>&#x2212;</mo>
+      <mi>b</mi>
+      <mo>&#xB1;</mo>
+      <msqrt>
+        <msup>
+          <mi>b</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mi>a</mi>
+        <mi>c</mi>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mi>a</mi>
+    </mrow>
+  </mfrac>
+</math>
+</blockquote>
+<h2>Licenses</h2>
+<p>nvMathViewer is a free/libre and open source software.</p>
+<ul>
+<li>The core of nvMathViewer is licensed under the Apache License 2.0.</li>
+<li>nvMathViewer includes Node.js runtime environment licensed under the <a href="nvMathViewer/Node.js/LICENSE" target="_blank">set of free licenses</a>.</li>
+<li>nvMathViewer includes MathJax engine licensed under the <a href="nvMathViewer/Node.js/node_modules/mathjax-full/LICENSE" target="_blank">Apache License 2.0</a>.</li>
+<li>nvMathViewer includes additional scripts for MathJax licensed under the Apache License 2.0.</li>
+<li>nvMathViewer includes the automatic installation script licensed under the MIT License.</li>
+</ul>
+<h2>Links</h2>
+<ul>
+<li><a href="https://github.com/tseykovets/nvMathViewer" target="_blank">Repository with source code and links to ready builds of nvMathViewer</a></li>
+</ul>
+<hr>
+<p class="copyright">This document is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 International License</a>.</p>
+</body>
+</html>

@@ -1,0 +1,25 @@
+BODY {
+	background: #FFFFFF;
+	color: #000000;
+	font-family: Verdana, "Times New Roman", Arial;
+	font-size: 12pt;
+	line-height: 1.5;
+}
+H1, H2, H3, .copyright {
+	text-align: center;
+	font-weight: bold;
+}
+H1 {
+	font-size: 18pt;
+}
+H2 {
+	font-size: 16pt;
+}
+H3, .copyright {
+	font-size: 14pt;
+}
+P {
+	text-align: justify;
+	padding: 6pt 5%;
+	text-indent: 0.5in;
+}
