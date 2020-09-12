@@ -28,17 +28,11 @@ First, prepare external binary components. To do this:
 4. Unpack the 7-Zip archive and copy the 7za.exe file to the source code directory so that it is located in the nvMathViewer\bin\7za.exe
 5. Unpack the Node.js archive and copy all its contents to the source code directory so that the node.exe file is located in the nvMathViewer\bin\Node.js\node.exe
 6. Go to the Node.js directory with a command line:  
-```
->CD nvMathViewer\bin\Node.js
-```
+```>CD nvMathViewer\bin\Node.js```
 7. Install mathjax-full package with a command line:  
-```
->npm install -g mathjax-full
-```
+```>npm install -g mathjax-full```
 8. After installation, you can remove large  unnecessary packages and components to save space, for example:  
-```
->RD /S /Q node_modules\npm node_modules\mathjax-full\components node_modules\mathjax-full\es5 node_modules\mathjax-full\node_modules node_modules\mathjax-full\ts
-```
+```>RD /S /Q node_modules\npm node_modules\mathjax-full\components node_modules\mathjax-full\es5 node_modules\mathjax-full\node_modules node_modules\mathjax-full\ts```
 
 Second, build the version for a screen reader you are interested in. To do this:
 
