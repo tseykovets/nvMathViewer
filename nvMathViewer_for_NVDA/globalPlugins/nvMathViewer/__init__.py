@@ -51,8 +51,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewLaTeXAsInteractiveMathML(self, gesture):
 		if isSecureMode(): return
-		thread = threading.Thread(target=showMathML, kwargs={'format': 'LaTeX'})
-		thread.start()
+		processText('LaTeX')
 
 	@script(
 		description='{0} {1}'.format(
@@ -63,8 +62,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewAsciiMathAsInteractiveMathML(self, gesture):
 		if isSecureMode(): return
-		thread = threading.Thread(target=showMathML, kwargs={'format': 'AsciiMath'})
-		thread.start()
+		processText('AsciiMath')
 
 	@script(
 		description='{0} {1}'.format(
@@ -75,8 +73,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewLaTeXAsSourceMathML(self, gesture):
 		if isSecureMode(): return
-		thread = threading.Thread(target=showMathML, kwargs={'format': 'LaTeX', 'source': True})
-		thread.start()
+		processText('LaTeX', source=True)
 
 	@script(
 		description='{0} {1}'.format(
@@ -87,8 +84,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewAsciiMathAsSourceMathML(self, gesture):
 		if isSecureMode(): return
-		thread = threading.Thread(target=showMathML, kwargs={'format': 'AsciiMath', 'source': True})
-		thread.start()
+		processText('AsciiMath', source=True)
 
 
 def isSecureMode():
@@ -101,9 +97,19 @@ def isSecureMode():
 		return False
 
 
-def showMathML(format, source=False):
-	"""Show the result of converting selected text or text from the clipboard to MathML."""
+def processText(format, source=False):
+	"""Take selected text or text from the clipboard and process it in a separate thread."""
 	text = getText()
+	thread = threading.Thread(target=showMathML, kwargs={
+		'text': text,
+		'format': format,
+		'source': source
+	})
+	thread.start()
+
+
+def showMathML(text, format, source):
+	"""Show the result of converting text to MathML."""
 	if not text:
 		# Translators: The message shown when both the selected text and the text in the clipboard are missing at the time of command execution.
 		ui.message(_("No selection and no text on the clipboard."))
