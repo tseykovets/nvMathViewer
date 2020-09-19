@@ -6,7 +6,7 @@
 <link rel="stylesheet" type="text/css" media="screen" href="../style.css">
 </head>
 <body>
-<h1>nvMathViewer 1.0</h1>
+<h1>nvMathViewer 1.1</h1>
 <p class="copyright">Copyright © Nikita Tseykovets <a href="mailto:tseikovets@rambler.ru?subject=nvMathViewer:%20">&lt;tseikovets@rambler.ru&gt;</a></p>
 <!-- Translators: Remove the HTML comment symbols when translating this document into another language.
 <p>(A possibly newer version of the help is <a href="../en/help.html">available in English</a>.)</p>
@@ -21,8 +21,9 @@
 <ol>
 <li>Select the text of LaTeX or AsciiMath notation and perform one of the assigned gestures (see “Initial setup” section).</li>
 <li>The window of browseable message will open, where you can view the conversion result.</li>
-<li>If there is no the selected text then the add-on will try to take a text from the clipboard.</li>
 </ol>
+<p>If there is no the selected text then the add-on will try to take a text from the clipboard.</p>
+<p>When converting LaTeX the “$” characters at both ends of the text, the “\[” characters at the beginning of the text, and the “\]” characters at the end of the text are automatically removed.</p>
 <p>For more information about interactive navigation through mathematical content, read the NVDA User Guide → Reading Mathematical Content.</p>
 <h2>Examples</h2>
 <p>If you select the following LaTeX notation and perform the “View the selected LaTeX notation as interactive MathML in the browse mode” command</p>
@@ -68,6 +69,22 @@
   </mfrac>
 </math>
 </blockquote>
+<h2>Version history</h2>
+<ul>
+<li>1.1 (2020.09.19)
+<ul>
+<li>Added preprocessing of LaTeX notation. Now the “$” characters at both ends of the text, the “\[” characters at the beginning of the text, and the “\]” characters at the end of the text are automatically removed.</li>
+<li>Fixed error of processing selected text in Microsoft Word and maybe in some other text editors or word processors.</li>
+</ul></li>
+<li>1.0.1 (2020.09.14)
+<ul>
+<li>Rebuild with MathJax engine version 3.1.2 where fixed the bug handling spaces after LaTeX commands.</li>
+</ul></li>
+<li>1.0 (2020.09.12)
+<ul>
+<li>First stable release.</li>
+</ul></li>
+</ul>
 <h2>Licenses</h2>
 <p>nvMathViewer is a free/libre and open source software.</p>
 <ul>
