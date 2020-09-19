@@ -44,8 +44,20 @@ const visitor = new SerializedMmlVisitor();
 const toMathML = (node => visitor.visitTree(node, html));
 
 // Convert the math notation from the command line to serialzied MathML
-console.log(toMathML(html.convert(process.argv[2] || '', {
+console.log(toMathML(html.convert(getPreprocessedText(process.argv[2]) || '', {
 	// Process as block element
 	display: true,
 	end: STATE.CONVERT
 })));
+
+function getPreprocessedText(text) {
+	// Remove spaces at the beginning and end of the text
+	text = text.trim();
+	// Remove "$" characters at the beginning and end of the text
+	text = text.replace(/^\$+/, '');
+	text = text.replace(/((\\\$)*)\$*$/, '$1');
+	// Remove "\[" and "\]" characters at the beginning and end of the text
+	text = text.replace(/^\\\[/, '');
+	text = text.replace(/\\\]$/, '');
+	return text;
+}
