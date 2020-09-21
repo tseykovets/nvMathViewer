@@ -23,8 +23,9 @@ import addonHandler
 import globalPluginHandler
 import globalVars
 import api
-from scriptHandler import script
+import scriptHandler
 import textInfos
+import tones
 import treeInterceptorHandler
 import ui
 
@@ -44,7 +45,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	# Translators: The label for the category of nvMathViewer in the Input Gestures dialog.
 	scriptCategory = _("Viewing mathematical content")
 
-	@script(
+	@scriptHandler.script(
 		description='{0} {1}'.format(
 			# Translators: The command to view LaTeX as interactive MathML. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected LaTeX notation as interactive MathML in the browse mode."),
@@ -53,9 +54,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewLaTeXAsInteractiveMathML(self, gesture):
 		if isSecureMode(): return
-		processText('LaTeX')
+		if scriptHandler.getLastScriptRepeatCount():
+			tones.beep(440, 50)
+		else:
+			processText('LaTeX')
 
-	@script(
+	@scriptHandler.script(
 		description='{0} {1}'.format(
 			# Translators: The command to view AsciiMath as interactive MathML. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected AsciiMath notation as interactive MathML in the browse mode."),
@@ -64,9 +68,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewAsciiMathAsInteractiveMathML(self, gesture):
 		if isSecureMode(): return
-		processText('AsciiMath')
+		if scriptHandler.getLastScriptRepeatCount():
+			tones.beep(440, 50)
+		else:
+			processText('AsciiMath')
 
-	@script(
+	@scriptHandler.script(
 		description='{0} {1}'.format(
 			# Translators: The command to view LaTeX as MathML source. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected LaTeX notation as the MathML source in the browse mode."),
@@ -75,9 +82,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewLaTeXAsSourceMathML(self, gesture):
 		if isSecureMode(): return
-		processText('LaTeX', source=True)
+		if scriptHandler.getLastScriptRepeatCount():
+			tones.beep(440, 50)
+		else:
+			processText('LaTeX', source=True)
 
-	@script(
+	@scriptHandler.script(
 		description='{0} {1}'.format(
 			# Translators: The command to view AsciiMath as MathML source. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected AsciiMath notation as the MathML source in the browse mode."),
@@ -86,7 +96,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	)
 	def script_viewAsciiMathAsSourceMathML(self, gesture):
 		if isSecureMode(): return
-		processText('AsciiMath', source=True)
+		if scriptHandler.getLastScriptRepeatCount():
+			tones.beep(440, 50)
+		else:
+			processText('AsciiMath', source=True)
 
 
 def isSecureMode():
