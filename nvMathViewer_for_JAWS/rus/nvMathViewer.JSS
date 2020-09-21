@@ -40,19 +40,35 @@ void Function AutoStartEvent ()
 EndFunction
 
 Script ViewLaTeXAsInteractiveMathML ()
-	ShowMathML ("LaTeX")
+	If IsSameScript () Then
+		Beep ()
+	Else
+		ShowMathML ("LaTeX")
+	EndIf
 EndScript
 
 Script ViewAsciiMathAsInteractiveMathML ()
-	ShowMathML ("AsciiMath")
+	If IsSameScript () Then
+		Beep ()
+	Else
+		ShowMathML ("AsciiMath")
+	EndIf
 EndScript
 
 Script ViewLaTeXAsSourceMathML ()
-	ShowMathML ("LaTeX", true)
+	If IsSameScript () Then
+		Beep ()
+	Else
+		ShowMathML ("LaTeX", true)
+	EndIf
 EndScript
 
 Script ViewAsciiMathAsSourceMathML ()
-	ShowMathML ("AsciiMath", true)
+	If IsSameScript () Then
+		Beep ()
+	Else
+		ShowMathML ("AsciiMath", true)
+	EndIf
 EndScript
 
 void Function ShowMathML (string sFormat, optional int iSource)
