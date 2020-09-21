@@ -35,6 +35,9 @@ tex2mmlPath = os.path.join(pluginPath, 'tex2mml.js')
 
 addonHandler.initTranslation()
 
+# Translators: This is the second part of several labels for nvMathViewer's commands in the Input Gestures dialog.
+additionalCommandDescription = _("If there is no selection the text will be taken from the clipboard.")
+
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
@@ -45,8 +48,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description='{0} {1}'.format(
 			# Translators: The command to view LaTeX as interactive MathML. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected LaTeX notation as interactive MathML in the browse mode."),
-			# Translators: This is the second part of several labels for nvMathViewer's commands in the Input Gestures dialog.
-			_("If there is no selection the text will be taken from the clipboard.")
+			additionalCommandDescription
 		)
 	)
 	def script_viewLaTeXAsInteractiveMathML(self, gesture):
@@ -57,7 +59,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description='{0} {1}'.format(
 			# Translators: The command to view AsciiMath as interactive MathML. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected AsciiMath notation as interactive MathML in the browse mode."),
-			_("If there is no selection the text will be taken from the clipboard.")
+			additionalCommandDescription
 		)
 	)
 	def script_viewAsciiMathAsInteractiveMathML(self, gesture):
@@ -68,7 +70,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description='{0} {1}'.format(
 			# Translators: The command to view LaTeX as MathML source. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected LaTeX notation as the MathML source in the browse mode."),
-			_("If there is no selection the text will be taken from the clipboard.")
+			additionalCommandDescription
 		)
 	)
 	def script_viewLaTeXAsSourceMathML(self, gesture):
@@ -79,7 +81,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		description='{0} {1}'.format(
 			# Translators: The command to view AsciiMath as MathML source. This is a label for the corresponding command in the Input Gestures dialog.
 			_("View the selected AsciiMath notation as the MathML source in the browse mode."),
-			_("If there is no selection the text will be taken from the clipboard.")
+			additionalCommandDescription
 		)
 	)
 	def script_viewAsciiMathAsSourceMathML(self, gesture):
