@@ -42,3 +42,60 @@ Second, build the version for a screen reader you are interested in. To do this:
 * Run the build_for_jaws.bat file in the root of the source code directory to build the extension for JAWS.
 
 The ready file will appear in the same root directory of the source code.
+
+## Localizing
+To localize the extension in new languages, you need:
+
+### Add-on for NVDA
+Once before any actions with translations you need to download and install Poedit translation editor from <https://poedit.net/download>. After installation, start the editor and open the menu "File", activate the "Preferences" item and on the "General" tab write your name and E-mail. You can set the rest of preferences as you wish.
+
+You can make a new translation or update an existing one.
+
+Here is an outline of what you should do to make a translation, for example, from English to Russian:
+
+1. Determine the code of the target language according to the ISO 639. For example, code of Russian is "ru". See <https://en.wikipedia.org/wiki/List_of_ISO_639-1_codes>
+2. Create the subdirectory "\locale\ru\LC_MESSAGES in" the add-on directory where "ru" can be any other language code.
+3. Start Poedit and open the menu "File", activate the "New" item (or just press CTRL+N).
+4. Select "Russian" in the dialogue and press "OK".
+5. Press "Extract from sources" button in the next dialogue.
+6. On "Translation properties" tab in the next dialogue write project name (e. g. "Russian translation of nvMathViewer for NVDA"), language team (e. g. "Ivan Petrov <ivan@example.com>"), charset and source code charset as "UTF-8" and press "Advanced extraction settings" button.
+7. In the "Extract notes for translators from" edit write "Translators:" and press "OK".
+8. In the "Catalogue properties" dialogue press "OK" and then open the menu "File", activate the "Save" item (or just press CTRL+S) and save the new file as nvda.po in the path "\locale\ru\LC_MESSAGES\nvda.po"
+9. Open the menu "Catalogue", activate the "Properties" item (or just press Alt+Enter).
+10. On the "Sources paths" tab press the browse button next to the "Paths" list and activate the "Add folders" item in the pop-up menu.
+11. In the dialogue that opens select the root directory of the add-on, that is, the one in which the main manifest.ini file is located.
+12. Press "OK" and open the menu "File", activate the "Save" item (or just press CTRL+S).
+13. Open the menu "Catalogue", activate the "Update from source code" item.
+14. Translate all phrases with Poedit. Pay attention to notes for translators which are displayed in the Poedit's interface.
+15. Open the menu "File", activate the "Save" item (or just press CTRL+S). Close Poedit.
+16. Copy the "\manifest.ini" file and create the "\locale\ru\manifest.ini" file based on it.
+17. Open the "\locale\ru\manifest.ini" file in a text editor, delete all lines except the line starting with "description" and translate the content of this line after the equal sign.
+18. Copy the "\doc\en" directory (or other directory you choose) and create the "\doc\ru" directory based on it.
+19. Open the "\doc\ru\help.html" file in a text editor and translate its content (you will need a basic knowledge of HTML). Pay attention to notes for translators which are written on separate commented out lines starting with "Translators:".
+
+Here is an outline of what you should do to update, for example, a Russian translation:
+
+1. Open the "\locale\ru\LC_MESSAGES\nvda.po" file with Poedit where "ru" can be any other language code.
+2. Open the menu "Catalogue", activate the "Update from source code" item.
+3. Translate all untranslated phrases with Poedit. Pay attention to notes for translators which are displayed in the Poedit's interface.
+4. Open the menu "File", activate the "Save" item (or just press CTRL+S). Close Poedit.
+5. Check the relevance of the "\doc\ru\help.html" and "\locale\ru\manifest.ini" files against the "\doc\en\help.html" and "\manifest.ini" files. Update if necessary.
+
+After that, try building the add-on with the new or updated translation and test its functionality before distributing.
+
+### Extension for JAWS
+In the extension directory, there are subdirectories and files that correspond to various languages that already have translations. English translation is the most complete and up-to-date and is probably the best candidate to use as a starting point. However, other translations can be used and might be better starting points if the language is similar to your language.
+
+Here is an outline of what you should do to make a translation, for example, from English to Russian:
+
+1. Copy the "\enu" directory (or other directory you choose) and create the "\rus" directory based on it. Try to use directory names that match the names of translation directories within JAWS.
+2. Open the "\rus\nvMathViewer.jsm" file in a text editor and translate constant values and a text of messages between lines  
+```@msg_*```  
+and  
+```@@```  
+Pay attention to notes for translators which are written on separate commented out lines starting with "Translators:".
+3. Open the "\rus\nvMathViewer.jsd" file in a text editor and translate the contents of lines starting with ":Synopsis" and ":Description". The parts ":Synopsis" and ":Description" do not need to be translated.
+4. Copy the "\ReadMe_in_English.html" file (or other ReadMe file you choose) and create the "\ReadMe_in_Russian.html" file based on it. Try to use the common name of language in the file name.
+5. Open the "\ReadMe_in_Russian.html" file in a text editor and translate its content (you will need a basic knowledge of HTML). Pay attention to notes for translators which are written on separate commented out lines starting with "Translators:".
+
+After that, try building the extension with the new translation and test its functionality before distributing.
