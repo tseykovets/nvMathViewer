@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8">
+<title>nvMathViewer</title>
+<link rel="stylesheet" type="text/css" media="screen" href="../style.css">
+</head>
+<body>
+<h1>nvMathViewer 1.1.1</h1>
+<p class="copyright">Copyright © Nikita Tseykovets <a href="mailto:tseikovets@rambler.ru?subject=nvMathViewer:%20">&lt;tseikovets@rambler.ru&gt;</a></p>
+<!-- 本文档和插件的中文本地化由 Cary Rowen完成。
+<p>(E-mail: manchen_0528@outlook.com)</p>
+-->
+<h2>关于</h2>
+<p>nvMathViewer是NVDA的附加插件，可用于将LaTeX和AsciiMath表达式中的数学内容以MathML形式查看。</p>
+<p>这些标记语言被广泛的应用在计算机系统中编写数学表达式。但是，了解 LaTeX 和 AsciiMath 可能需要普通用户掌握额外的技术，另外，因为不能了解公式结构，通过直接阅读这些标记语言来理解一个表达式可能还不够方便。</p>
+<p>nvMathViewer 解决了这些难点，并使视障用户可以使用 NVDA 的特殊功能方便快捷的查看任何 LaTeX 或 AsciiMath 表达式，以非视觉方式阅读数学内容并可以进行结构化导航。</p>
+<h2>初始设置</h2>
+<p>此插件为 NVDA 添加了一些额外的快捷键首饰（默认未分配），因此您必须在“输入首饰”对话框的“查看数学内容”类别下自行设置，有关如何操作，请查看《NVDA用户指南》→“输入手势”章节。</p>
+<h2>使用</h2>
+<ol>
+<li>选择 LaTeX 或 AsciiMath 表达式的文本内容并按下执行相应功能的快捷键（请参阅“初始设置”部分）。</li>
+<li>此时会打开可使用浏览模式的独立窗口，您可以查看转换后的结果。</li>
+</ol>
+<p>如果未选择文本将从剪贴板中获取。</p>
+<p>转换 LaTeX 时，将自动删除文本两端的“$”字符，文本开头的“\[”字符和文本结尾的“\]”字符。</p>
+<p>有关在数学内容中交互式导航的更多信息，请阅读《NVDA用户指南》→“阅读数学内容”章节。</p
+<h2>例子</h2>
+<p>如果选中以下 LaTeX 表达式并执行“在浏览模式下，以交互MathML形式查看选择的LaTeX表达式”功能</p>
+<blockquote>
+<p>x_{1, 2} = \frac{-b \pm \sqrt{b^2 -4ac}}{2a}</p>
+</blockquote>
+<p>或者选择以下 AsciiMath 表达式并执行“在浏览模式下，以交互MathML形式查看选择的AsciiMath表达式”功能</p>
+<blockquote>
+<p>x_(1, 2) = (-b +- sqrt(b^2 -4ac))/(2a)</p>
+</blockquote>
+<p>然后可看到以下显示效果：</p>
+<blockquote>
+<math xmlns="http://www.w3.org/1998/Math/MathML" display="block">
+  <msub>
+    <mi>x</mi>
+    <mrow>
+      <mn>1</mn>
+      <mo>,</mo>
+      <mn>2</mn>
+    </mrow>
+  </msub>
+  <mo>=</mo>
+  <mfrac>
+    <mrow>
+      <mo>&#x2212;</mo>
+      <mi>b</mi>
+      <mo>&#xB1;</mo>
+      <msqrt>
+        <msup>
+          <mi>b</mi>
+          <mn>2</mn>
+        </msup>
+        <mo>&#x2212;</mo>
+        <mn>4</mn>
+        <mi>a</mi>
+        <mi>c</mi>
+      </msqrt>
+    </mrow>
+    <mrow>
+      <mn>2</mn>
+      <mi>a</mi>
+    </mrow>
+  </mfrac>
+</math>
+</blockquote>
+<h2>更新历史</h2>
+<ul>
+<li>1.1.1 (2020.09.21)
+<ul>
+<li>防止用户连续多次按下相应快捷键或长时间按住按键而执行多个动作。</li>
+</ul></li>
+<li>1.1 (2020.09.19)
+<ul>
+<li>添加了 LaTeX 表达式的预处理。现在，将自动删除文本两端的“$”字符，文本开头的“\[”字符和文本结尾的“\]”字符</li>
+<li>修复了在 Microsoft Word 以及其他一些文本编辑器中处理选择文本的错误。</li>
+</ul></li>
+<li>1.0.1 (2020.09.14)
+<ul>
+<li>使用MathJax3.1.2进行重构，其中修复了 LaTeX 命令后的错误处理。</li>
+</ul></li>
+<li>1.0 (2020.09.12)
+<ul>
+<li>第一个稳定版发布。</li>
+</ul></li>
+</ul>
+<h2>许可协议</h2>
+<p>nvMathViewer 是免费且开源的软件。</p>
+<ul>
+<li>nvMathViewer 的核心已获得 <a href="../../gpl-3.0.txt" target="_blank">GNU通用公共许可证3</a>的许可。</li>
+<li>nvMathViewer 包含了根据<a href="../../globalPlugins/nvMathViewer/Node.js/LICENSE" target="_blank">免费许可证</a>许可的 Node.js 运行时环境。</li>
+<li>nvMathViewer包含了根据<a href="../../globalPlugins/nvMathViewer/Node.js/node_modules/mathjax-full/LICENSE" target="_blank"> Apache许可证2.0</a>许可的 MathJax 引擎。</li>
+<li>nvMathViewer 包含了根据Apache License 2.0许可的MathJax的其他脚本。</li>
+</ul>
+<h2>链接</h2>
+<ul>
+<li><a href="https://github.com/tseykovets/nvMathViewer" target="_blank">源代码存储库以及指向nvMathViewer的发行版的链接</a></li>
+<li><a href="https://addons.nvda-project.org/addons/access8math" target="_blank">Access8Math add-on that enhances reading of mathematical content with NVDA</a></li>
+</ul>
+<hr>
+<p class="copyright">本文档根据<a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">知识共享署名4.0国际许可证许可</a>.</p>
+</body>
+</html>
