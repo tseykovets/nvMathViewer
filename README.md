@@ -30,7 +30,9 @@ First, prepare external binary components. To do this:
 6. Go to the Node.js directory with a command line:  
 ```>CD nvMathViewer\bin\Node.js```
 7. Install mathjax-full package with a command line:  
-```>npm install -g mathjax-full```
+```>npm install -g mathjax-full```  
+Note: The latest version of MathJax tested for compatibility with nvMathViewer is 3.1.2. You can download this particular version:  
+```>npm install -g mathjax-full@3.1.2```
 8. After installation, you can remove large  unnecessary packages and components to save space, for example:  
 ```>RD /S /Q node_modules\npm node_modules\mathjax-full\components node_modules\mathjax-full\es5 node_modules\mathjax-full\node_modules node_modules\mathjax-full\ts```
 
